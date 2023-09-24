@@ -25,23 +25,28 @@
    right: 300px;
 }
 
-.toggle {
-    background: url(/images/menu.png) no-repeat;
-    width: 60px;
-    height: 60px;
-    background-size: 30px;
-    background-position: center;
-    cursor: pointer;
+
+.toggle .border {
+    background-color: white;
+    width: 27px;
+    height: 2.5px;
+    margin-bottom: 7px;
+    transition: all 0.5s;
 }
 
-.toggle.active {
-    background: url(/images/close.png) no-repeat;
-    width: 60px;
-    height: 60px;
-    background-size: 30px;
-    background-position: center;
-    cursor: pointer;
+.toggle.active .border:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
 }
+
+.toggle.active .border:nth-child(2) {
+    opacity: 0;
+}
+
+.toggle.active .border:nth-child(3) {
+    transform: translateY(-8.9px) rotate(45deg);
+}
+
+
 
 .showcase header {
     position: absolute;
@@ -83,12 +88,14 @@
     color: #BBBBBB;
 }
 
-.showcase video {
+.showcase .hero {
+    background-image: url(images/main-7.jpg);
+    background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     opacity: 0.8;
 }
@@ -118,20 +125,41 @@
 }
 
 .text a {
+    position: relative;
+    padding-left: 25px;
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: white;
-    color: black;
+    border: solid 3px white;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
 }
 
+/*.text a::before {
+    content: "";
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+}*/
+
 .text a:hover {
-    letter-spacing: 6px;
+    letter-spacing: 3px;
+    background-color: white;
+    color: black;
 }
+
+
 
 .overlay {
     position: absolute;
@@ -140,7 +168,7 @@
     width: 100%;
     height: 100%;
     background-color: #BBBBBB;
-    mix-blend-mode: overlay;
+    mix-blend-mode: soft-light;
 }
 .showcase .social {
     position: absolute;
